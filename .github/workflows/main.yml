@@ -7,7 +7,12 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: testing
         run: echo ${{ vars.HAI }}
         env:
           TEST: ${{ vars.TEST }}
+      - name: testing secrets
+        run: |
+          echo "${{ secrets.TEST }}" >> file_test.txt &&\
+          ls -lh && cat file_test.txt
