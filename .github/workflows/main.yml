@@ -23,5 +23,5 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: pwd
+          # script: pwd
             
