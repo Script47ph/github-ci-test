@@ -17,7 +17,7 @@ jobs:
           echo "${{ secrets.TEST }}" >> file_test.txt &&\
           ls -lh && cat file_test.txt
       - name: Test libvirt
-        uses: appleboy/ssh-action@v1.0.3
+        uses: Script47ph/ssh-action@libvirt-test
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
