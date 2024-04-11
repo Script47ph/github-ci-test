@@ -16,3 +16,10 @@ jobs:
         run: |
           echo "${{ secrets.TEST }}" >> file_test.txt &&\
           ls -lh && cat file_test.txt
+      - name: Test libvirt
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
